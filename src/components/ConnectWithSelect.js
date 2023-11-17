@@ -1,6 +1,5 @@
 import { GnosisSafe } from '@web3-react/gnosis-safe'
 import { Network } from '@web3-react/network'
-import { WalletConnect } from '@web3-react/walletconnect'
 import { WalletConnect as WalletConnectV2 } from '@web3-react/walletconnect-v2'
 import { useCallback, useEffect, useState } from 'react'
 
@@ -74,7 +73,6 @@ export function ConnectWithSelect({
           await connector.activate()
         } else if (
           connector instanceof WalletConnectV2 ||
-          connector instanceof WalletConnect ||
           connector instanceof Network
         ) {
           await connector.activate(desiredChainId)
